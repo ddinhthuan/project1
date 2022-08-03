@@ -53,15 +53,15 @@
 					<div class="tt-product-vertical-layout">
 						<div class="tt-product-single-img">
 							<div>
-								<img class="zoom-product" src='http://bros-admin.herokuapp.com/assets/images/<%= prod.images[0] %>' data-zoom-image="http://bros-admin.herokuapp.com/assets/images/<%= prod.images[0] %>" alt="">
+								<img class="zoom-product" src="images/product/<%= prod.images[0] %>" data-zoom-image="images/product/<%= prod.images[0] %>" alt="">
 								
 							</div>
 						</div>
 						<div class="tt-product-single-carousel-vertical">
 							<ul id="smallGallery" class="tt-slick-button-vertical slick-animated-show-js">
-								<li><a class="zoomGalleryActive" href="/#" data-image="http://bros-admin.herokuapp.com/assets/images/<%= prod.images[0] %>" data-zoom-image="http://bros-admin.herokuapp.com/assets/images/<%= prod.images[0] %>"><img src="http://bros-admin.herokuapp.com/assets/images/<%= prod.images[0] %>" alt=""></a></li>
+								<li><a class="zoomGalleryActive" href="/#" data-image="images/<%= prod.images[0] %>" data-zoom-image="images/<%= prod.images[0] %>"><img src="images/<%= prod.images[0] %>" alt=""></a></li>
 								<% prod.images.forEach(function(image) { %>
-									<li><a href="/#" data-image="http://bros-admin.herokuapp.com/assets/images/<%= image %>" data-zoom-image="http://bros-admin.herokuapp.com/assets/images/<%= image %>"><img src="http://bros-admin.herokuapp.com/assets/images/<%= image %>" alt=""></a></li>
+									<li><a href="/#" data-image="images/<%= image %>" data-zoom-image="images/<%= image %>"><img src="images/<%= image %>" alt=""></a></li>
 								
 								<% }); %>
 								
@@ -213,7 +213,7 @@
 											<%})%>
 											
 										</div>
-										<!-- <div class="tt-review-form">
+										 <div class="tt-review-form">
 											<div class="tt-message-info" id="rv" >
 												Đánh giá
 											</div>
@@ -343,7 +343,7 @@
 													<button type="submit" class="btn">Đánh giá</button>
 												</div>
 											</form>
-										</div> -->
+										</div> 
 									</div>
 								</div>
 							</div>
@@ -400,7 +400,7 @@
                 <div class="tt-img">
                   <img
                     src="/images/loader.svg"
-                    data-src="http://bros-admin.herokuapp.com/assets/images/<%= prod.images[0] %>"
+                    data-src="public/images/product/<%= prod.images[0] %>"
                     alt=""
                   />
                 </div>
