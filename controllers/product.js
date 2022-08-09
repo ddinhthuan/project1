@@ -275,6 +275,7 @@ exports.getCart = (req, res, next) => {
     user: req.user,
     cartProduct: cartProduct
   });
+
 };
 
 exports.addToCart = (req, res, next) => {
@@ -399,3 +400,79 @@ exports.mergeCart = (req, res, next) => {
   }
   res.redirect("/");
 };
+
+exports.getaddProduct = (req, res, next) => {
+    // if(!req.isAuthenticated == false)
+    // {
+      //res.redirect("/login");
+    //   res.render("addProduct");
+    // }
+    // else{
+      // if(req.user.role == 1 )
+      // {
+        res.render("addProduct", {
+        title: "Thêm sản phẩm mới"
+        // user: req.user
+        });
+      // }
+      // else{
+      //   res.redirect("/products");
+      // }
+  }
+//}
+
+
+exports.postproduct = (req, res, next) => {
+  // if ( typeof req.user.role == 1 )
+  // {
+  const { name, images, price, description, category } = req.body
+  let errors = [];
+  if(!name || !images || !price || !description || !category){
+    errors.push({ msg: 'Please fill in all fields' });
+  }
+
+  if(errors.length > 0){
+    res.render('addProduct', {
+    errors,
+    name,
+    images,
+    price,
+    description,
+    category
+    });
+  } else {
+    Products.findOne({ name: name }).then(prod => {
+    
+        //if product exists
+        if(prod) {
+            errors.push({ msg: 'Product already in DB' })
+            res.render('addProduct', {
+                errors,
+                name,
+                images,
+                price,
+                description,
+                category
+            })
+        } else {
+            const newProduct = new Products({
+                name,
+                images,
+                price,
+                description,
+                category
+            })
+            newProduct.save().then(prod => {
+                // req.flash('success_msg', 'Product was added');
+                res.redirect('/products');
+            }).catch(err => res.status(400).json({ message: err.message }))
+        }
+    })
+  }
+}
+
+// else{
+
+// }
+
+//}

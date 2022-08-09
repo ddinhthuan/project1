@@ -35,4 +35,8 @@ router.get("/delete-item/:productId", productController.getDeleteItem);
 
 router.get("/merge-cart", productController.mergeCart);
 
+router.get("/add-product", productController.getaddProduct);
+
+//router.post("/add-product", productController.postproduct);
+
 module.exports = router;

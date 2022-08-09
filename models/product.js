@@ -77,7 +77,8 @@ const productSchema = new Schema({
   },
   materials: {
     type: [String],
-    required: true
+    required: true,
+    defaut: ["vải", "lụa"]
   },
   buyCounts: {
     type: Number,
