@@ -37,6 +37,9 @@ router.get("/merge-cart", productController.mergeCart);
 
 router.get("/add-product", productController.getaddProduct);
 
-//router.post("/add-product", productController.postproduct);
+router.post("/add-product", productController.postproduct);
 
+router.get("/add-category", productController.getaddCategory);
+
+router.post("/add-category", productController.postaddCategory);
 module.exports = router;

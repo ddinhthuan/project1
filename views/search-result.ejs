@@ -40,11 +40,11 @@
               <div class="col-6 col-md-4 col-lg-3">
                 <div class="tt-product thumbprod-center">
                   <div class="tt-image-box">
-                    <a href="/product/<%= prod._id %>">
+                    <a href="/images/product/<%= prod._id %>">
                       <span class="tt-img"
                         ><img
-                          src="images/product/<%= prod.images[0] %>"
-                          data-src="images/product/<%= prod.images[0] %>"
+                          src="/images/product/<%= prod.images[0] %>"
+                          data-src="/product/<%= prod.images[0] %>"
                           alt=""
                           class="loaded"
                           data-was-processed="true"
@@ -86,7 +86,7 @@
                           data-toggle="modal"
                           data-target="#modalAddToCartProduct<%= prod._id %>"
                         >
-                          THÊM VÀO GIỎ HÀNG
+                          Thêm vào giỏ hàng
                         </button>
                       </div>
                       <div class="tt-row-btn"></div>
@@ -132,7 +132,7 @@
                             <div class="tt-modal-messages"><i class="icon-f-68"></i> Đã thêm vào giỏ hàng thành công!</div>
                             <div class="tt-modal-product">
                               <div class="tt-img">
-                                <img src="/images/loader.svg" data-src="public/images/product/<%= prod.images[0] %>" alt="" />
+                                <img src="/images/loader.svg" data-src="/images/product/<%= prod.images[0] %>" alt="" />
                               </div>
                               <h2 class="tt-title">
                                 <a href="/product/<%= prod.name %>"><%= prod.name %></a>

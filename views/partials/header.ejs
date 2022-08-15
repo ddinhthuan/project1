@@ -3,24 +3,14 @@
 		<ul>
 			<li>
 				<a href="/">Trang chủ</a>
-				<ul>
-					<li>
-						<a href="/">HOME STYLES</a>
-						
-					</li>
-					<li>
-						<a href="/">HOME STYLES</a>
-						
-					</li>
-					<li>
-						<a href="/">HOME SKINS <span class="tt-badge tt-sale">HOT</span></a>
-						
-					</li>
-				</ul>
+				
 			</li>
 			<li>
 				<a href="/products">Cửa hàng</a>
 				
+			</li>
+			<li>
+				<a href="/add-product">Dành cho người bán</a>
 			</li>
 			
 		</ul>
@@ -85,7 +75,6 @@
 										<a href="/products">Cửa hàng</a>
 									</li>
 									
-									
 								</ul>
 							</nav>
 						</div>
@@ -96,14 +85,14 @@
 					<!-- tt-search -->
 					<div class="tt-desctop-parent-search tt-parent-box">
 						<div class="tt-search tt-dropdown-obj">
-							<button class="tt-dropdown-toggle" data-tooltip="Search" data-tposition="bottom">
+							<button class="tt-dropdown-toggle" data-tooltip="Tìm kiếm" data-tposition="bottom">
 								<i class="icon-f-85"></i>
 							</button>
 							<div class="tt-dropdown-menu">
 								<div class="container">
 									<form method="GET" action="/search">
 										<div class="tt-col">
-											<input type="text" class="tt-search-input" placeholder="Tìm Kiếm Sản Phẩm..." name="searchText">
+											<input type="text" class="tt-search-input"  name="searchText">
 											
 											<button class="tt-btn-search" type="submit"></button>
 										
@@ -122,7 +111,7 @@
 					<!-- /tt-search -->
 					<!-- tt-cart -->
 					<div class="tt-desctop-parent-cart tt-parent-box">
-						<div class="tt-cart tt-dropdown-obj box-cart" data-tooltip="Cart" data-tposition="bottom" >
+						<div class="tt-cart tt-dropdown-obj box-cart" data-tooltip="Giỏ hàng" data-tposition="bottom" >
 							<button class="tt-dropdown-toggle">
 								<i class="icon-f-39"></i>
 								<span class="tt-badge-cart" ><%= session.cart.numItems%></span>
@@ -135,10 +124,10 @@
 								<div class="tt-dropdown-inner">
 									<div class="tt-cart-layout">
 										<!-- layout emty cart -->
-										<!-- <a href="/empty-cart.html" class="tt-cart-empty">
+										<a  class="tt-cart-empty">
 											<i class="icon-f-39"></i>
-											<p>No Products in the Cart</p>
-										</a> -->
+											
+										</a>
 										<div class="tt-cart-content" >
 											
 											<div class="tt-cart-list">
@@ -246,19 +235,19 @@
 					<!-- tt-langue and tt-currency -->
 					<div class="tt-desctop-parent-multi tt-parent-box">
 						<div class="tt-multi-obj tt-dropdown-obj">
-							<button class="tt-dropdown-toggle" data-tooltip="Cài đặt" data-tposition="bottom"><i class="icon-f-79"></i></button>
+							<button class="tt-dropdown-toggle" data-tooltip="Quản trị" data-tposition="bottom"><i class="icon-f-79"></i></button>
 							<div class="tt-dropdown-menu">
 								<div class="tt-mobile-add">
 									<button class="tt-close">Đóng</button>
 								</div>
 								<div class="tt-dropdown-inner">
 									<ul>
-										<li class="active"><a href="/#">Tiếng Việt</a></li>
+										<li><a href="/add-product">Tới trang dành cho người bán</a></li>
 										
 									</ul>
 									<ul>
-										<li class="active"><a href="/#"><i class="icon-h-59"></i>VND - Việt Nam Đồng</a></li>
-										<li><a href="/#"><i class="icon-h-60"></i>USD - Dollar</a></li>
+										
+										<li><a href="/add-category">Tới trang dành cho quản trị viên</a></li>
 									</ul>
 								</div>
 							</div>

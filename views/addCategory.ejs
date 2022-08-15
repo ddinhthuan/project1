@@ -65,12 +65,12 @@
                 <i class="fa-solid fa-user ava-user"></i>
               </div>
             <div class="seller_join">
-              <p>Seller</p>
+              <p>Admin</p>
               <span>Joined July 16,2022 </span>
             </div>
           </div>
           <ul class="seller_function">
-            <li class="seller_function-items">ADD PRODUCT</li>
+            <li class="seller_function-items">ADD CATEGORIES</li>
 
           </ul>
           </div>
@@ -81,46 +81,24 @@
         <div class="seller_tab seller__addPr block ">
           <div class="seller_addPr-main">
             <div class="addPr_head">
-              <h4 class="">Add Product</h4>
+              <h4 class="">Add categories</h4>
             </div>
 
-            <form action="/add-product" method="POST">
+            <form action="/add-category" method="POST">
             <ul class="seller_addPr-list">
               <li class="seller_product-items">
-                <p for="">Product Name</p>
-                <input type="text" placeholder="Enter Product Name" 
+                <p for="">categories Name</p>
+                <input type="text" placeholder="Enter category Name" 
                 name ="name" />
               </li>
-              <!-- <li class="seller_product-items">
-                <p for="">Brand Name</p>
-                <input type="text" placeholder="Enter Brand Name" >
-              </li> -->
-              <!-- <li class="seller_product-items">
-                <p for="">Category Name</p>
-                <input type="text" placeholder="Enter Category ">
-              </li> -->
+           
               <li class="seller_product-items">
-                <p for="">Product Description</p>
+                <p for="">categories Description</p>
                 <input type="text" placeholder="Enter product description " 
                 name="description" />
               </li>
-              <!-- <li class="seller_product-items">
-                <p for="">Product Quantity</p>
-                <input type="text" placeholder="Enter product Quantity">
-              </li> -->
-              <li class="seller_product-items">
-                <p for="">Product Price</p>
-                <input type="text" placeholder="Enter product Price " 
-                name="price"  />
-              </li>
-              <li class="seller_product-items">
-                <p for="">Product Image</p>
-                <div class="img_box">
-                   <input type="text" name="imageURL"  
-                   placeholder="No file chosen"  />
-                </div>
-              </li>
-              <button class="addPro_btn">Add Product</button>
+              
+              <button class="addPro_btn">Add Category</button>
             </ul>
             </form>
           </div>

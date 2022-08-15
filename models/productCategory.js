@@ -6,11 +6,10 @@ const productCategorySchema = new Schema({
     type: String,
     required: true
   },
-  // tương tự code, là trường con (aothun, aohoodie, ...)
-  // tương tự name , là trường con mà viết hoa có dấu ...
-  childName: {
-    type: [String],
-    required: true
+
+  description: {
+    type: String,
+    require: true
   }
 });
 

@@ -402,77 +402,59 @@ exports.mergeCart = (req, res, next) => {
 };
 
 exports.getaddProduct = (req, res, next) => {
-    // if(!req.isAuthenticated == false)
-    // {
-      //res.redirect("/login");
-    //   res.render("addProduct");
-    // }
-    // else{
-      // if(req.user.role == 1 )
-      // {
-        res.render("addProduct", {
-        title: "Thêm sản phẩm mới"
-        // user: req.user
-        });
-      // }
-      // else{
-      //   res.redirect("/products");
-      // }
+  if ( req.user.role != "1") {
+    res.render("err1");
   }
-//}
-
-
-exports.postproduct = (req, res, next) => {
-  // if ( typeof req.user.role == 1 )
-  // {
-  const { name, images, price, description, category } = req.body
-  let errors = [];
-  if(!name || !images || !price || !description || !category){
-    errors.push({ msg: 'Please fill in all fields' });
-  }
-
-  if(errors.length > 0){
-    res.render('addProduct', {
-    errors,
-    name,
-    images,
-    price,
-    description,
-    category
-    });
-  } else {
-    Products.findOne({ name: name }).then(prod => {
-    
-        //if product exists
-        if(prod) {
-            errors.push({ msg: 'Product already in DB' })
-            res.render('addProduct', {
-                errors,
-                name,
-                images,
-                price,
-                description,
-                category
-            })
-        } else {
-            const newProduct = new Products({
-                name,
-                images,
-                price,
-                description,
-                category
-            })
-            newProduct.save().then(prod => {
-                // req.flash('success_msg', 'Product was added');
-                res.redirect('/products');
-            }).catch(err => res.status(400).json({ message: err.message }))
-        }
-    })
+  else if(req.user.role == "1") {
+    //res.send('you are not seller');
+    res.render("addProduct");
   }
 }
 
-// else{
 
-// }
 
-//}
+exports.postproduct = (req, res, next) => {
+  const name = req.body.name;
+    const imageUrl = req.body.imageURL;
+    const price = req.body.price;
+    const description = req.body.description;
+    const product = new Products({
+        name: name,
+        price: price,
+        description: description,
+        images: imageUrl
+    });
+    product.save()
+        .then(result => {
+            res.redirect("/products");
+        })
+        .catch(err => console.log(err));
+    
+}
+
+exports.getaddCategory = (req, res, next) => {
+  if ( req.user.role != "2") {
+    res.render("err2");
+  }
+  else if(req.user.role == "2") {
+    //res.send('you are not seller');
+    res.render("addCategory");
+  }
+}
+
+exports.postaddCategory = (req, res, next) => {
+    const name = req.body.name;
+
+    const description = req.body.description;
+
+
+    const category = new Categories({
+      name: name,
+      description: description
+    });
+
+    category.save()
+    .then(result => {
+      res.redirect("/");
+    })
+}

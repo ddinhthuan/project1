@@ -14,7 +14,8 @@ const productSchema = new Schema({
   },
   stock: {
     type: Number,
-    required: true
+    required: true,
+    default: 10
   },
   price: {
     type: Number,
@@ -22,15 +23,17 @@ const productSchema = new Schema({
   },
   size: {
     type: [String],
-    required: true
+    required: true,
+    default: ["S", "L", "M", "X", "XL"]
   },
   productType: {
-    main: [String] ,
+    main: [String],
     sub:  [String]
   },
   color: {
     type: [String],
-    required: true
+    required: true,
+    default: ["Đỏ", "trắng"]
   },
   pattern: {
     type: [String],
@@ -73,7 +76,7 @@ const productSchema = new Schema({
   labels: {
     type: String,
     required: false,
-    default: "Shiro"
+    default: "Việt Nam"
   },
   materials: {
     type: [String],
